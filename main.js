@@ -82,5 +82,26 @@ function cambiaImg(){
 }
 
 function toggle(){
-    
+    let menu = document.getElementsByClassName("botones")[0];
+    let buttons = menu.children;
+    if (buttons[1].style.display != "none") {
+        for (let i = 1; i < buttons.length; i++) {
+            buttons[i].style.display = "none";
+        }
+    } else {
+        for (let i = 1; i < buttons.length; i++) {
+            buttons[i].style.display = "inline-block";
+        }
+    }
+
+    // let buttons = menu.childNodes;
+    // if (buttons[3].style.display != "none") {
+    //     for (let i = 3; i < buttons.length; i+=2) {
+    //         buttons[i].style.display = "none";
+    //     }
+    // } else {
+    //     for (let i = 3; i < buttons.length; i+=2) {
+    //         buttons[i].style.display = "inline-block";
+    //     }
+    // }
 }
