@@ -44,7 +44,7 @@ function fuentesImg(){
 
 }    
 
-function togleClase(){
+function toggleClase(){
     let header = document.getElementById('titular');
     if (header.classList == "") {
         header.classList = "activo";
@@ -63,16 +63,24 @@ function intercalar(){
 }
 
 function cambiaImg(){
-    let centralImg = document.getElementsByClassName("carrusel")[0];
-    centralImg.setAttribut("data-img") = 1;
-    // if (centralImg.getAttribute(data-img) == 0) {
-        
-    // } else {
-        
-    // }
-    console.log(centralImg);
+    let centralDivImg = document.getElementsByClassName("carrusel")[0];
+    let centralImg = centralDivImg.firstElementChild;
+    let images = document.querySelectorAll("img");
+
+    if (centralDivImg.getAttribute("data-img") == 0) {
+        centralDivImg.setAttribute("data-img",1);
+        centralImg.src = images[1].src;
+    }
+    else if (centralDivImg.getAttribute("data-img") == 1) {
+        centralDivImg.setAttribute("data-img",2);
+        centralImg.src = images[2].src;
+    }
+    else {
+        centralDivImg.setAttribute("data-img",0);
+        centralImg.src = images[0].src;
+    }
 }
 
 function toggle(){
-
+    
 }
